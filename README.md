@@ -1,5 +1,5 @@
 <!-- omit in toc -->
-# LoRWeB: Spanning the Visual Analogy Space with a Weight Basis of LoRAs
+# LoRWeB: Spanning the Visual Analogy Space with a Weight Basis of LoRAs [ECCV 2026]
 
 <div align="center">
 
