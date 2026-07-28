@@ -75,7 +75,7 @@ You can test a reproduced* model checkpoint from [HuggingFace](https://huggingfa
 python inference.py -w "output/your_model/your_model.safetensors" -c "output/your_model/config.yaml" -a "data/path_to_a_img.jpg" -t "data/path_to_atag_img.jpg" -b "data/patH-to_b_img.jpg" -o "outputs/generated_btag_img_path.jpg"
 ```
 
-\*This checkpoint is a reproduction of our model's checkpoint from the paper, trained on Technion hardware. Some differences from the results reported in the paper and obtained via the original checkpoint are expected. Please see `samples` for examples on the expected differences. These results can be reproduced via downloading the evluation set and the original images and running e.g.:
+\*This checkpoint is a reproduction of our model's checkpoint from the paper, trained on Technion hardware. Some differences from the results reported in the paper and obtained via the original checkpoint are expected. Please see `samples` for examples on the expected differences. These results can be reproduced via downloading the evaluation set and the original images and running e.g.:
 
 ```bash
 python inference.py -w "lorweb_model/lorweb_model.safetensors" -c "config.yaml" -a "data/original/unsplash_animals/alvan-nee-brFsZ7qszSY-unsplash.jpg" -t "data/decoded_random_inference_set/db_not_in_trainset/animals/Give_this_animal_a_fantastical_set_of_armor/alvan-nee-brFsZ7qszSY-unsplash_2.png" -b "data/original/unsplash_animals/ryan-walton-AbNO2iejoXA-unsplash.jpg" -o "samples/armor_doggy.jpg" -p "Give this animal a fantastical set of armor"
