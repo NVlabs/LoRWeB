@@ -72,7 +72,7 @@ Use `preprocess_data.py` to preprocess a pre-downloaded dataset.
 You can test a reproduced* model checkpoint from [HuggingFace](https://huggingface.co/hilamanor/lorweb) using `inference.py`.
 
 ```bash
-python inference.py -w "output/your_model/your_model.safetensors" -c "output/your_model/config.yaml" -a "data/path_to_a_img.jpg" -t "data/path_to_atag_img.jpg" -b "data/patH-to_b_img.jpg" -o "outputs/generated_btag_img_path.jpg"
+python inference.py -w "output/your_model/your_model.safetensors" -c "output/your_model/config.yaml" -a "data/path_to_a_img.jpg" -t "data/path_to_atag_img.jpg" -b "data/path_to_b_img.jpg" -o "outputs/generated_btag_img_path.jpg"
 ```
 
 \*This checkpoint is a reproduction of our model's checkpoint from the paper, trained on Technion hardware. Some differences from the results reported in the paper and obtained via the original checkpoint are expected. Please see `samples` for examples on the expected differences. These results can be reproduced via downloading the evluation set and the original images and running e.g.:
