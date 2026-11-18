@@ -53,7 +53,7 @@ import torch.nn.functional as F
 from PIL import Image
 
 from diffusers import FluxTransformer2DModel, AutoencoderKL, FluxKontextPipeline
-from diffusers.models.attention_processor import FluxAttnProcessor2_0, Attention
+from diffusers.models.attention_processor import Attention
 from diffusers.models.normalization import AdaLayerNormZero, AdaLayerNormZeroSingle
 from diffusers.models.modeling_outputs import Transformer2DModelOutput
 from diffusers.models.transformers.transformer_flux import FluxTransformerBlock, FluxSingleTransformerBlock
@@ -1833,7 +1833,13 @@ class CustomAttention(Attention):
         )
 
 
-class CustomFluxAttnProcessor2_0(FluxAttnProcessor2_0):
+class CustomFluxAttnProcessor2_0:
+    # Not a subclass of diffusers' FluxAttnProcessor2_0: since diffusers 0.35 that name is a
+    # deprecation shim whose __new__ returns a FluxAttnProcessor, which drops this __call__.
+    def __init__(self):
+        if not hasattr(F, "scaled_dot_product_attention"):
+            raise ImportError("CustomFluxAttnProcessor2_0 requires PyTorch 2.0, to use it, please upgrade PyTorch to 2.0.")
+
     def __call__(
         self,
         attn: Attention,
